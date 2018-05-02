@@ -1,0 +1,30 @@
+<div class="card">
+  <div class="card-body d-flex">
+    <img [src]="'assets/images/hotels/'+ hotel.image" alt="Card image cap">
+    <div>
+      <div class="description">
+
+        <h5 class="card-title">{{hotel.name}}</h5>
+        <ul>
+          <li *ngFor="let star of hotel.starsDraw">
+            <am-star></am-star>
+          </li>
+        </ul>
+        <ul>
+          <li *ngFor="let amenities of hotel.amenities">
+            <img [src]="'assets/icons/amenities/' + amenities + '.svg'" alt="" class="amenitie">
+          </li>
+        </ul>
+      </div>
+      <div class="price">
+        <p class="text-center">Precio por noche por habitación</p>
+        <p class="text-center price-hotel">ARS
+          <strong>{{hotel.price}}</strong>
+        </p>
+        <p  class="text-center">
+          <a href="#" class="btn btn-primary">Ver hotel</a>
+        </p>
+      </div>
+    </div>
+  </div>
+</div>

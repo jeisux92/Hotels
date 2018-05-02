@@ -1,0 +1,65 @@
+<div class="row">
+  <div class="col-sm-12">
+    <div class="card col-xs-12">
+      <div class="card-body">
+        <span class="font-weight-bold">Filtros</span>
+      </div>
+    </div>
+    <div class="card col-xs-12">
+      <div class="card-body">
+        <figure class="float-left">
+          <img src="assets/icons/filters/search.svg" alt="">
+          <figcaption class="font-weight-bold">
+            Nombre de hotel
+          </figcaption>
+        </figure>
+        <div class="float-right">
+            <i class="fas fa-sort-down"></i>
+          </div>
+        <div class="input-group">
+          <div class="custom-file">
+            <input type="text" class="form-control" placeholder="Ingrese el nombre del hotel">
+          </div>
+          <div class="input-group-append">
+            <button type="button" class="btn btn-primary btn-sm">Aceptar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="card col-xs-12">
+      <div class="card-body">
+        <div class="container-star">
+          <div class="float-left">
+            <figure>
+              <am-star></am-star>
+              <figcaption class="font-weight-bold">
+                Estrellas
+              </figcaption>
+            </figure>
+          </div>
+          <div class="float-right">
+            <i class="fas fa-sort-down"></i>
+          </div>
+        </div>
+        <div class="custom-control custom-checkbox split">
+          <input type="checkbox" class="custom-control-input" id="fullStars">
+          <label class="custom-control-label font-weight-bold" for="fullStars">Todas las estrellas </label>
+        </div>
+
+        <div *ngFor="let star of stars;let index = index">
+          <ul>
+            <div class="custom-control custom-checkbox">
+              <input type="checkbox" class="custom-control-input" [id]="index">
+
+              <label class="custom-control-label" [for]="index">
+                <li *ngFor="let i of star">
+                  <am-star (color)="yellow"></am-star>
+                </li>
+              </label>
+            </div>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,17 @@
+body {
+  background-color: gainsboro;
+}
+
+.btn,
+.btn-primary {
+  background-color: #563d7c !important;
+  border-color: #563d7c !important;
+  &:active {
+    background-color: #563d7c !important;
+    border-color: #563d7c !important;
+  }
+  &:hover {
+    background-color: #563d7c !important;
+    border-color: #563d7c !important;
+  }
+}

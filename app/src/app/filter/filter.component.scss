@@ -1,0 +1,33 @@
+.container-star {
+  display: block;
+}
+
+figure {
+  img {
+    width: 14px;
+    float: left;
+    margin-top: 5px;
+  }
+  figcaption {
+    padding-left: 22px;
+  }
+}
+
+.card {
+  margin-bottom: 15px;
+  am-star {
+    float: left;
+  }
+  
+  .split {
+    padding-top: 40px;
+    padding-bottom: 6px;
+  }
+  ul {
+    padding-left: 0%;
+    margin-bottom: 0%;
+    li {
+      display: inline-block;
+    }
+  }
+}

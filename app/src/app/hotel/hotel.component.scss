@@ -1,0 +1,38 @@
+.card {
+  margin-bottom: 15px;
+}
+
+.card-body {
+  img {
+    max-width: 17rem;
+    max-height: 13rem;
+    float: left;
+    padding-right: 20px;
+  }
+  div {
+    float: left;
+    width: 74%;
+  }
+  .amenitie {
+    width: 2.5rem;
+  }
+  .description {
+    width: 70%;
+  }
+  .price {
+    padding-left: 4px;
+    width: 30%;
+    border-left: 1px dotted gray;
+    .price-hotel {
+      font-size: 1.2em;
+      color: orange;
+    }
+  }
+}
+
+ul {
+  padding-left: 0%;
+  li {
+    display: inline-block;
+  }
+}
