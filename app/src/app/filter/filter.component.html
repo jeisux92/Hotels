@@ -14,14 +14,14 @@
           </figcaption>
         </figure>
         <div class="float-right">
-            <i class="fas fa-sort-down"></i>
-          </div>
-        <div class="input-group">
+          <i class="fas" (click)="changet()" [ngClass]="{'fa-sort-down':!toggle1,'fa-sort-up':toggle1}"></i>
+        </div>
+        <div class="input-group" [ngStyle]="{'display':toggle1 ? 'flex' : 'none' }">
           <div class="custom-file">
-            <input type="text" class="form-control" placeholder="Ingrese el nombre del hotel">
+            <input type="text" class="form-control" placeholder="Ingrese el nombre del hotel" [(ngModel)]="name">
           </div>
           <div class="input-group-append">
-            <button type="button" class="btn btn-primary btn-sm">Aceptar</button>
+            <button type="button" class="btn btn-primary btn-sm" (click)="buscar()">Aceptar</button>
           </div>
         </div>
       </div>
@@ -38,26 +38,30 @@
             </figure>
           </div>
           <div class="float-right">
-            <i class="fas fa-sort-down"></i>
+            <i class="fas" (click)="changet2()" [ngClass]="{'fa-sort-down':!toggle2,'fa-sort-up':toggle2}"></i>
           </div>
         </div>
-        <div class="custom-control custom-checkbox split">
-          <input type="checkbox" class="custom-control-input" id="fullStars">
-          <label class="custom-control-label font-weight-bold" for="fullStars">Todas las estrellas </label>
-        </div>
+        <div [ngStyle]="{'display':toggle2 ? 'block' : 'none' }">
 
-        <div *ngFor="let star of stars;let index = index">
-          <ul>
-            <div class="custom-control custom-checkbox">
-              <input type="checkbox" class="custom-control-input" [id]="index">
 
-              <label class="custom-control-label" [for]="index">
-                <li *ngFor="let i of star">
-                  <am-star (color)="yellow"></am-star>
-                </li>
-              </label>
-            </div>
-          </ul>
+          <div class="custom-control custom-checkbox split">
+            <input type="checkbox" class="custom-control-input" id="fullStars" (change)="changeFull()" [(ngModel)]="full">
+            <label class="custom-control-label font-weight-bold" for="fullStars">Todas las estrellas </label>
+          </div>
+
+          <div *ngFor="let star of stars;let index = index">
+            <ul>
+              <div class="custom-control custom-checkbox">
+                <input type="checkbox" class="custom-control-input" [id]="index" [(ngModel)]="starC[index]" (click)="changeValue(index)">
+
+                <label class="custom-control-label" [for]="index">
+                  <li *ngFor="let i of star">
+                    <am-star (color)="yellow"></am-star>
+                  </li>
+                </label>
+              </div>
+            </ul>
+          </div>
         </div>
       </div>
     </div>

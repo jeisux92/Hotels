@@ -12,7 +12,10 @@ figure {
     padding-left: 22px;
   }
 }
-
+.fas{
+  pointer-events: auto;
+  cursor: pointer;
+}
 .card {
   margin-bottom: 15px;
   am-star {

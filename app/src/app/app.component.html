@@ -2,7 +2,7 @@
 <div class="container-fluid top-margin">
   <div class="row">
     <div class="col-md-3 col-xs-12 col-sm-12">
-      <am-filter></am-filter>
+      <am-filter (queryHotel)="query($event)"></am-filter>
     </div>
     <div class="col-md-9 col-xs-12 col-sm-12">
       <am-hotel *ngFor="let hotel of hotels" [hotel]=hotel></am-hotel>

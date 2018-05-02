@@ -17,10 +17,19 @@ router.get('/hoteles', function (req, res) {
 });
 
 router.route('/hoteles/:id').get((req, res) => {
-    console.log(req.params.id);
     var hotel = hotels.find(x => x.id == req.params.id);
     res.json(hotel);
-})
+});
+
+router.route('/hoteles/:name/:stars').get((req, res) => {
+    var stars = req.params.stars.split('-');
+    res.json((hotels.filter(x => {
+        return x.name.search(req.params.name) != -1 && req.params.stars.search(x.stars) != -1;
+    }))
+    );
+    var hotel = hotels.find(x => x.id == req.params.id);
+    res.json(hotel);
+});
 
 app.use('/api', router);
 

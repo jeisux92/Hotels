@@ -2,7 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { JsonpModule, Response } from '@angular/http';
-
+import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { FilterComponent } from './filter/filter.component';
@@ -23,7 +23,8 @@ import { HotelesService } from './services/hoteles.service';
   imports: [
     BrowserModule,
     JsonpModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [
     InterceptorService,

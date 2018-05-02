@@ -17,4 +17,7 @@ export class AppComponent implements OnInit {
   ngOnInit() {
     this._HotelService.getHotels().subscribe((x: any) => this.hotels = x);
   }
+  query(querys){
+    this._HotelService.getHotelsFilter(querys).subscribe((x: any) => this.hotels = x);
+  }
 }

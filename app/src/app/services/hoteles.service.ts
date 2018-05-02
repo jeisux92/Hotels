@@ -8,4 +8,7 @@ export class HotelesService {
   getHotels() {
     return this.http.get('hoteles');
   }
+  getHotelsFilter(query) {
+    return this.http.get(`hoteles/${query}`);
+  }
 }
