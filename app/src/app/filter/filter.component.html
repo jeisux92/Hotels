@@ -18,7 +18,7 @@
         </div>
         <div class="input-group" [ngStyle]="{'display':toggle1 ? 'flex' : 'none' }">
           <div class="custom-file">
-            <input type="text" class="form-control" placeholder="Ingrese el nombre del hotel" [(ngModel)]="name">
+            <input type="text" class="form-control" placeholder="Ingrese el nombre del hotel" [(ngModel)]="name" (keyup.enter)="buscar()">
           </div>
           <div class="input-group-append">
             <button type="button" class="btn btn-primary btn-sm" (click)="buscar()">Aceptar</button>

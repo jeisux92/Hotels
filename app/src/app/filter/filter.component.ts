@@ -38,15 +38,23 @@ export class FilterComponent implements OnInit {
   }
   buscar() {
     let starSend = [];
+    let count = 0;
     this.starC.forEach((x, index) => {
       if (x) {
         starSend.push(5 + (index * -1));
       }
-    })
-    this.queryHotel.emit(`${this.name}/${starSend.join('-')}`)
+      else {
+        count++;
+      }
+    });
+    if (count === 5) {
+      starSend = [1, 2, 3, 4, 5];
+    }
+    console.log(!this.name ? true : this.name);
+    this.queryHotel.emit(`${!this.name ? null : this.name}/${starSend.join('-')}`)
   }
   changeValue(index) {
-    this.starC[index] = !this.starC[index]
+    this.starC[index] = !this.starC[index];
   }
   changet() {
     this.toggle1 = !this.toggle1;
