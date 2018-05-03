@@ -24,7 +24,7 @@ router.route('/hoteles/:id').get((req, res) => {
 router.route('/hoteles/:name/:stars').get((req, res) => {
     var stars = req.params.stars.split('-');
     res.json((hotels.filter(x => {
-        return x.name.search(req.params.name) != -1 && req.params.stars.search(x.stars) != -1;
+        return x.name.toLowerCase().search(req.params.name.toLowerCase()) != -1 && req.params.stars.search(x.stars) != -1;
     }))
     );
     var hotel = hotels.find(x => x.id == req.params.id);
